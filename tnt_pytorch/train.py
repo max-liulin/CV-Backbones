@@ -344,7 +344,7 @@ def main():
     ################## pretrain ############
     if args.pretrain_path is not None:
         print('Loading:', args.pretrain_path)
-        state_dict = torch.load(args.pretrain_path)
+        state_dict = torch.load(args.pretrain_path, map_location='cpu')
         model.load_state_dict(state_dict, strict=False)
         print('Pretrain weights loaded.')
     ################### flops #################
